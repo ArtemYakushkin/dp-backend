@@ -6,6 +6,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import userRoutes from './routes/users.js';
 import authRoutes from './routes/auth.js';
+import postRoutes from './routes/posts.js';
 
 const app = express();
 dotenv.config();
@@ -20,6 +21,7 @@ mongoose.connect(process.env.DB_MONGO)
 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/posts', postRoutes);
 
 const PORT = process.env.PORT || 3003;
 
